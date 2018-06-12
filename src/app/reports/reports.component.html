@@ -1,0 +1,31 @@
+<div class="container headingDiv1">
+  <div class="row">
+    <div class="col-md-5">
+       <div style="display: block">
+          <canvas baseChart
+                [data]="pieChartData"
+                [labels]="pieChartLabels"
+                [chartType]="pieChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+      </div>
+      
+    </div>
+
+    <div class="offset-md-1 col-md-6">
+       <div style="display: block">
+            <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)">
+          </canvas>
+      </div>
+    <button (click)="randomize()">Update</button>
+   </div>
+ </div>
+  
+</div>

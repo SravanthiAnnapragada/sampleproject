@@ -1,0 +1,121 @@
+<div class="container">
+  <h3 class="text-center headingDiv1">BOM : Item Data</h3>
+  <form class="form-horizontal">
+    <div class="init-scr">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-2">
+          <label for="material">Item No</label>
+        </div>
+        <div class="col-md-3">
+          <input class="form-control" 
+          type="text" id="item-no"
+           name="item-no"
+            placeholder="Enter item-no" required>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+    <div class="init-scr">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-2">
+          <label for="Component">Component</label>
+        </div>
+        <div class="col-md-3">
+          <input class="form-control"
+           type="text" id="Component" 
+           name="Component" placeholder="Enter Component" required>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+    <div class="init-scr">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-2">
+          <label for="cdesc">Component Description</label>
+        </div>
+        <div class="col-md-3">
+          <input class="form-control"
+           type="Textarea" id="cdesc" 
+           name="cdesc"
+           placeholder="Enter description of Component" required>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+    <div class="init-scr">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-2">
+          <label for="qty">Enter quantity</label>
+        </div>
+        <div class="col-md-3">
+          <input class="form-control" 
+          type="text" id="qty"
+           name="qty"
+           placeholder="Enter quantity" required>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+    <div class="init-scr">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-2">
+          <label for="uom">UOM</label>
+        </div>
+        <div class="col-md-3">
+          <input class="form-control"
+           type="text" 
+           id="uom" 
+           name="uom"
+           placeholder="Enter UOM" required>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+    <div class="init-scr">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-2">
+          <label for="expiry_date">Expiry Date</label>
+        </div>
+        <div class="col-md-3">
+          <input class="form-control" type="date"
+           id="expiry_date"
+            name="expiry_date" 
+            placeholder="Enter the expiry date" required>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+    <div class="form-group">
+          
+      <button type="button"
+       class="buttonDiv1 btn btn-lg btn-dark"
+        routerLink="/fill_item_data">Next Item</button>
+      <button type="button"
+       class="btn btn-lg btn-dark"
+        routerLink="/header_data">Set Header</button>
+      <button type="button" 
+      class="btn btn-lg btn-dark" 
+      routerLink="/material">Cancel</button>
+    </div>
+  </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

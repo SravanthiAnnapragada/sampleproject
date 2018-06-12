@@ -1,0 +1,43 @@
+<div class="container logn-form">
+    <form class="form-horizontal" name="loginForm" (submit)="loginUser($event,valid);loginForm.reset()">
+<div class="row">
+     <div class="col-md-3">
+       <label for="username">UserName</label>
+     </div>
+     <div class="col-md-9">
+       <input class="form-control" 
+       type="text" 
+       id="UserName"
+       name="UserName"
+       ngModel 
+       placeholder="Enter Username"
+       #UserName="ngModel" 
+       required
+       minlength="4"
+       maxlength="12"
+       >
+     </div>
+     <div class="alert alert-danger" *ngIf="UserName.touched && !UserName.valid">Please enter username!</div>
+   </div>
+   <div class="row">
+         <div class="col-md-3">
+           <label for="password">Password</label>
+         </div>
+         <div class="col-md-9">
+           <input 
+           class="form-control" 
+           type="password" 
+           id="Password" 
+           name="Password"
+           ngModel
+           #Password="ngModel"
+           placeholder="Enter Password" 
+           required>
+         </div>
+         <div class="alert alert-danger" *ngIf="Password.touched && !Password.valid">Please enter Valid Password!</div>
+       </div>
+   <div class="form-group btn-sign">
+       <button class="btn-lg btn-dark" [disabled]="!loginForm.valid">Sign In</button>
+   </div>
+</form>
+</div>

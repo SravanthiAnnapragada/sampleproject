@@ -1,0 +1,103 @@
+<div class="container">
+  <h3 class="text-center headingDiv1">Create Bill of Material:Initial Screen</h3>
+  <form class="form-horizontal" (ngSubmit)="onSubmit(createBillForm.value);createBillForm.reset()" #createBillForm="ngForm">
+    <div class="init-scr">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-2">
+          <label for="material">Material</label>
+        </div>
+        <div class="col-md-3">
+          <input class="form-control" type="text" id="material" name="material" 
+          placeholder="Enter material" required [(ngModel)]="createBillModel.material"
+            #material="ngModel" minlength="4" maxlength="10">
+          <div *ngIf="material.invalid && material.touched || material.invalid && material.dirty " class="alert alert-danger" ng-show="createBillForm.name.$invalid">
+           Please enter valid material
+          </div>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+    </div>
+    <div class="init-scr">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-2">
+          <label for="plant">Plant</label>
+        </div>
+        <div class="col-md-3">
+          <input class="form-control" type="text" id="plant" name="plant"
+           placeholder="Enter Plant" required [(ngModel)]="createBillModel.plant" #plant="ngModel" minlength="4" maxlength="15">
+          <div *ngIf="plant.invalid && plant.touched" class="alert alert-danger">
+            Plant is required
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+    <div class="init-scr">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-2">
+          <label for="bomusage">BOM Usage</label>
+        </div>
+        <div class="col-md-3">
+          <input class="form-control" type="number" id="bomusage" name="bomusage" 
+          placeholder="Enter BOMusage" required [(ngModel)]="createBillModel.bomUsage" #bomUsage="ngModel">
+          <div *ngIf="bomUsage.invalid && bomUsage.touched" class="alert alert-danger">
+            Enter BOM Usage Qty 
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+ 
+</div>
+
+<div class="container effectDiv">
+  <h3 class="border bg-dark text-light">Effectivity</h3>
+  <form class="form-horizontal form2">
+    <div class="border effectBorderDiv">
+      <div class="init-scr">
+        <div class="row">
+          <div class="col-md-4">
+            <label for="Cnumber">Change Number</label>
+          </div>
+          <div class="col-md-6">
+            <input class="form-control" type="text" id="Change Number" name="Change Number"
+            placeholder="Enter Change Number" required [(ngModel)]="createBillModel.changeNumber" #changeNumber="ngModel">
+            <div *ngIf="changeNumber.invalid && changeNumber.touched" class="alert alert-danger">
+              ChangeNumber is required 
+          </div>
+        </div>
+      </div>
+      <div class="init-scr">
+        <div class="row">
+          <div class="col-md-4">
+            <label for="validfrom">Valid from</label>
+          </div>
+          <div class="col-md-6">
+            <input class="form-control" type="date" id="Valid from" name="Valid from"
+             placeholder="Enter Valid from" required [(ngModel)]="createBillModel.validFrom" #validFrom="ngModel">
+            <div *ngIf="validFrom.invalid && validFrom.touched" class="alert alert-danger">
+              Please select Valid From Date
+          </div>
+        </div>
+      </div>
+      <div class="init-scr">
+        <div class="row">
+          <div class="col-md-4">
+            <label for="revision level">Revision Level</label>
+          </div>
+          <div class="col-md-6">
+            <input class="form-control" type="number" id="Revision Level" name="Revision Level"
+             placeholder="Enter Revision Level" required [(ngModel)]="revisionLevel.changeNumber" #revisionLevel="ngModel">
+            <div *ngIf="revisionLevel.invalid && revisionLevel.touched" class="alert alert-danger">
+              revisionLevel is required 
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <button type="button" class="buttonDiv1 btn btn-lg btn-dark" [disabled]="!createBillForm.valid" routerLink="/fill_item_data">Set Item/Header Date</button>
+      <button type="button" class="btn btn-lg btn-dark" routerLink="/material">Cancel</button>
+    </div>
+ 
+</div>
