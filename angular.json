@@ -33,6 +33,7 @@
               "./node_modules/datatables.net/js/jquery.dataTables.js",
               "./node_modules/popper.js/dist/popper.min.js",
               "./node_modules/chart.js/src/chart.js"
+             
             ]
           },
           "configurations": {

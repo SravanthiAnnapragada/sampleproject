@@ -1,5 +1,5 @@
 <div class="container logn-form">
-    <form class="form-horizontal" name="loginForm" (submit)="loginUser($event,valid);loginForm.reset()">
+    <form class="form-horizontal" name="loginForm" (submit)="loginUser($event);loginForm.valid();loginForm.reset()">
 <div class="row">
      <div class="col-md-3">
        <label for="username">UserName</label>
@@ -13,8 +13,7 @@
        placeholder="Enter Username"
        #UserName="ngModel" 
        required
-       minlength="4"
-       maxlength="12"
+       pattern="[A-Za-z\s]{4,15}" 
        >
      </div>
      <div class="alert alert-danger" *ngIf="UserName.touched && !UserName.valid">Please enter username!</div>
@@ -32,7 +31,8 @@
            ngModel
            #Password="ngModel"
            placeholder="Enter Password" 
-           required>
+           required
+           pattern="[A-Za-z0-9]{8,8}" >
          </div>
          <div class="alert alert-danger" *ngIf="Password.touched && !Password.valid">Please enter Valid Password!</div>
        </div>

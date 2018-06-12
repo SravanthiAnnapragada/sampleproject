@@ -1,7 +1,11 @@
-import { Chart } from 'node_modules/chart.js/dist/Chart.js';
+//import { Chart } from 'node_modules/chart.js/dist/Chart.js';
 import { ChartsModule } from 'ng2-charts';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+//import {AccordionModule} from 'primeng/accordion';
+//import {MenuItem} from 'primeng/api'; 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+//import {CalendarModule} from 'primeng/calendar';
 
 
 import { DataTablesModule } from 'angular-datatables';
@@ -17,6 +21,7 @@ import {FormsModule} from '@angular/forms';
 import { ViewdataComponent } from './viewdata/viewdata.component';
 import { ReportsComponent } from './reports/reports.component';
 import { HeaderComponent } from './header/header.component';
+import { NgDatepickerModule } from 'ng2-datepicker';
 
 @NgModule({
   declarations: [
@@ -35,7 +40,9 @@ import { HeaderComponent } from './header/header.component';
     AppRoutingModule,
     FormsModule,
     DataTablesModule,
-    ChartsModule
+    ChartsModule,
+    BrowserAnimationsModule,
+    NgDatepickerModule
     
     
   ],

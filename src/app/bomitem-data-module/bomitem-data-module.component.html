@@ -1,17 +1,22 @@
 <div class="container">
   <h3 class="text-center headingDiv1">BOM : Item Data</h3>
-  <form class="form-horizontal">
-    <div class="init-scr">
+  <form class="form-horizontal" #f="ngForm" (ngSubmit)="onSubmit(f.value);f.reset()">
+    <div class ="init-scr">
       <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-2">
           <label for="material">Item No</label>
         </div>
         <div class="col-md-3">
-          <input class="form-control" 
-          type="text" id="item-no"
-           name="item-no"
-            placeholder="Enter item-no" required>
+          <input 
+          type="text" 
+          ngModel  
+          id="itemno" 
+           name="itemno"
+           #itemno="ngModel"
+           placeholder="Enter itemno" 
+            pattern="[A-Za-z\s]{3,15}" required class="form-control" >
+            <div class="alert alert-danger" *ngIf="itemno.touched && !itemno.valid">Please enter a itemno in text!</div>
         </div>
         <div class="col-md-3"></div>
       </div>
@@ -24,8 +29,12 @@
         </div>
         <div class="col-md-3">
           <input class="form-control"
+          ngModel
            type="text" id="Component" 
+           #Component="ngModel"
+           pattern="[A-Za-z\s]{4,15}"
            name="Component" placeholder="Enter Component" required>
+           <div class="alert alert-danger" *ngIf="Component.touched && !Component.valid">Please enter a valid Component!</div>
         </div>
         <div class="col-md-3"></div>
       </div>
@@ -38,9 +47,13 @@
         </div>
         <div class="col-md-3">
           <input class="form-control"
-           type="Textarea" id="cdesc" 
+           type="textarea" id="cdesc" 
            name="cdesc"
+           ngModel
+           #cdesc="ngModel"
+           pattern="[A-Za-z\s]{4,60}"
            placeholder="Enter description of Component" required>
+           <div class="alert alert-danger" *ngIf="cdesc.touched && !cdesc.valid">Please enter description only in text!</div>
         </div>
         <div class="col-md-3"></div>
       </div>
@@ -53,9 +66,14 @@
         </div>
         <div class="col-md-3">
           <input class="form-control" 
-          type="text" id="qty"
+          type="number" id="qty"
            name="qty"
+           ngModel
+           #qty="ngModel"
+           minlength="1"
+           maxlength="7"
            placeholder="Enter quantity" required>
+           <div class="alert alert-danger" *ngIf="qty.touched && !qty.valid">Please enter a valid quantity!</div>
         </div>
         <div class="col-md-3"></div>
       </div>
@@ -71,7 +89,11 @@
            type="text" 
            id="uom" 
            name="uom"
+           ngModel
+           #uom="ngModel"
+           pattern="[A-Za-z\s]{3,15}"
            placeholder="Enter UOM" required>
+           <div class="alert alert-danger" *ngIf="uom.touched && !uom.valid">Please enter a valid UOM!</div>
         </div>
         <div class="col-md-3"></div>
       </div>
@@ -80,13 +102,18 @@
       <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-2">
-          <label for="expiry_date">Expiry Date</label>
+          <label for="expirydate">Expiry Date</label>
         </div>
         <div class="col-md-3">
+            <!-- <ng-datepicker class=" form-control"ngModel #expirydate="ngModel" type="date" name="expirydate" id="expirydate" [options]="options"></ng-datepicker> -->
           <input class="form-control" type="date"
-           id="expiry_date"
-            name="expiry_date" 
+           id="expirydate"
+            name="expirydate"
+            ngModel 
+            #expirydate="ngModel"
             placeholder="Enter the expiry date" required>
+            
+            <div class="alert alert-danger" *ngIf="expirydate.touched && !expirydate.valid">Please select a valid expiry date!</div>
         </div>
         <div class="col-md-3"></div>
       </div>
@@ -95,6 +122,7 @@
           
       <button type="button"
        class="buttonDiv1 btn btn-lg btn-dark"
+       type="submit" [disabled]="!f.valid"
         routerLink="/fill_item_data">Next Item</button>
       <button type="button"
        class="btn btn-lg btn-dark"
@@ -103,7 +131,11 @@
       class="btn btn-lg btn-dark" 
       routerLink="/material">Cancel</button>
     </div>
-  </form>
+    <div>
+    {{itemdata|json}}
+    </div>
+ </form>
+
 </div>
 
 

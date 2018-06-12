@@ -33,3 +33,6 @@ button{
 .buttonDiv1{
     margin-left: 370px;
 }
+ng-datepicker {
+    width: 254px;
+}

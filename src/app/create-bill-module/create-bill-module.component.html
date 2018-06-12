@@ -8,10 +8,16 @@
           <label for="material">Material</label>
         </div>
         <div class="col-md-3">
-          <input class="form-control" type="text" id="material" name="material" 
-          placeholder="Enter material" required [(ngModel)]="createBillModel.material"
-            #material="ngModel" minlength="4" maxlength="10">
-          <div *ngIf="material.invalid && material.touched || material.invalid && material.dirty " class="alert alert-danger" ng-show="createBillForm.name.$invalid">
+          <input class="form-control"
+           type="text" 
+           id="material" 
+           name="material" 
+          placeholder="Enter material" 
+          required [(ngModel)]="createBillModel.material"
+          pattern="[A-Za-z\s]{4,15}"
+           #material="ngModel">
+          <div *ngIf="material.invalid && material.touched || material.invalid && material.dirty " 
+          class="alert alert-danger" ng-show="createBillForm.name.$invalid">
            Please enter valid material
           </div>
         </div>
@@ -32,6 +38,7 @@
         </div>
         <div class="col-md-3"></div>
       </div>
+     </div>
     </div>
     <div class="init-scr">
       <div class="row">
@@ -49,11 +56,11 @@
       </div>
     </div>
  
-</div>
+   </div>
 
 <div class="container effectDiv">
   <h3 class="border bg-dark text-light">Effectivity</h3>
-  <form class="form-horizontal form2">
+  <div class="form-horizontal form2">
     <div class="border effectBorderDiv">
       <div class="init-scr">
         <div class="row">
@@ -88,7 +95,7 @@
           </div>
           <div class="col-md-6">
             <input class="form-control" type="number" id="Revision Level" name="Revision Level"
-             placeholder="Enter Revision Level" required [(ngModel)]="revisionLevel.changeNumber" #revisionLevel="ngModel">
+             placeholder="Enter Revision Level" required [(ngModel)]="createBillModel.revisionLevel" #revisionLevel="ngModel">
             <div *ngIf="revisionLevel.invalid && revisionLevel.touched" class="alert alert-danger">
               revisionLevel is required 
           </div>
@@ -99,5 +106,11 @@
       <button type="button" class="buttonDiv1 btn btn-lg btn-dark" [disabled]="!createBillForm.valid" routerLink="/fill_item_data">Set Item/Header Date</button>
       <button type="button" class="btn btn-lg btn-dark" routerLink="/material">Cancel</button>
     </div>
- 
+    </div>
+ </div>
+</div>
+</div>
+</div>
+</form>
+{{createBillModel|json}}
 </div>

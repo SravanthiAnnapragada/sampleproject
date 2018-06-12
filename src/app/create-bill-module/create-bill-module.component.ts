@@ -11,7 +11,13 @@ export class CreateBillModuleComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.createBillModel = {material: '', plant: '', bomUsage: '', changeNumber: '', validFrom: '', revisionLevel: ''};
+    this.createBillModel = {
+      material: '',
+      plant: '',
+      bomUsage: '',
+      changeNumber: '',
+      validFrom: '',
+      revisionLevel: ''};
   }
 
   onSubmit(value: any){
