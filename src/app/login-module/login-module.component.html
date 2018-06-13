@@ -13,7 +13,7 @@
        placeholder="Enter Username"
        #UserName="ngModel" 
        required
-       pattern="[A-Za-z\s]{4,15}" 
+       pattern="[A-Za-z0-9\s]{4,15}" 
        >
      </div>
      <div class="alert alert-danger" *ngIf="UserName.touched && !UserName.valid">Please enter username!</div>
@@ -32,7 +32,7 @@
            #Password="ngModel"
            placeholder="Enter Password" 
            required
-           pattern="[A-Za-z0-9]{8,8}" >
+           pattern="[a-zA-Z0-9!@#$%^&*~]{8,8}" >
          </div>
          <div class="alert alert-danger" *ngIf="Password.touched && !Password.valid">Please enter Valid Password!</div>
        </div>

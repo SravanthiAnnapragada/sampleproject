@@ -15,7 +15,7 @@
            name="itemno"
            #itemno="ngModel"
            placeholder="Enter itemno" 
-            pattern="[A-Za-z\s]{3,15}" required class="form-control" >
+            pattern="A-Za-z\s!@#$%^&*~]{1,15}" required class="form-control" >
             <div class="alert alert-danger" *ngIf="itemno.touched && !itemno.valid">Please enter a itemno in text!</div>
         </div>
         <div class="col-md-3"></div>
@@ -32,7 +32,7 @@
           ngModel
            type="text" id="Component" 
            #Component="ngModel"
-           pattern="[A-Za-z\s]{4,15}"
+           pattern="[A-Za-z0-9\s!@#$%^&*~]{3,15}"
            name="Component" placeholder="Enter Component" required>
            <div class="alert alert-danger" *ngIf="Component.touched && !Component.valid">Please enter a valid Component!</div>
         </div>
@@ -51,7 +51,7 @@
            name="cdesc"
            ngModel
            #cdesc="ngModel"
-           pattern="[A-Za-z\s]{4,60}"
+           pattern="[A-Za-z0-9\s!@#$%^&*~]{2,60}"
            placeholder="Enter description of Component" required>
            <div class="alert alert-danger" *ngIf="cdesc.touched && !cdesc.valid">Please enter description only in text!</div>
         </div>
@@ -71,7 +71,7 @@
            ngModel
            #qty="ngModel"
            minlength="1"
-           maxlength="7"
+           maxlength="15"
            placeholder="Enter quantity" required>
            <div class="alert alert-danger" *ngIf="qty.touched && !qty.valid">Please enter a valid quantity!</div>
         </div>
@@ -91,7 +91,7 @@
            name="uom"
            ngModel
            #uom="ngModel"
-           pattern="[A-Za-z\s]{3,15}"
+           pattern="[A-Za-z\s!@#$%^&*~]{2,15}"
            placeholder="Enter UOM" required>
            <div class="alert alert-danger" *ngIf="uom.touched && !uom.valid">Please enter a valid UOM!</div>
         </div>
@@ -122,7 +122,7 @@
           
       <button type="button"
        class="buttonDiv1 btn btn-lg btn-dark"
-       type="submit" [disabled]="!f.valid"
+       type="submit"
         routerLink="/fill_item_data">Next Item</button>
       <button type="button"
        class="btn btn-lg btn-dark"

@@ -14,7 +14,7 @@
            name="material" 
           placeholder="Enter material" 
           required [(ngModel)]="createBillModel.material"
-          pattern="[A-Za-z\s]{4,15}"
+          pattern="[A-Za-z\s!@#$%^&*~]{3,15}"
            #material="ngModel">
           <div *ngIf="material.invalid && material.touched || material.invalid && material.dirty " 
           class="alert alert-danger" ng-show="createBillForm.name.$invalid">
@@ -68,7 +68,7 @@
             <label for="Cnumber">Change Number</label>
           </div>
           <div class="col-md-6">
-            <input class="form-control" type="text" id="Change Number" name="Change Number"
+            <input class="form-control" type="text" id="Change Number" name="Change Number" minlength="1"
             placeholder="Enter Change Number" required [(ngModel)]="createBillModel.changeNumber" #changeNumber="ngModel">
             <div *ngIf="changeNumber.invalid && changeNumber.touched" class="alert alert-danger">
               ChangeNumber is required 
@@ -81,7 +81,7 @@
             <label for="validfrom">Valid from</label>
           </div>
           <div class="col-md-6">
-            <input class="form-control" type="date" id="Valid from" name="Valid from"
+            <input class="form-control" type="date" id="Valid from" name="Valid from" minlength="1"
              placeholder="Enter Valid from" required [(ngModel)]="createBillModel.validFrom" #validFrom="ngModel">
             <div *ngIf="validFrom.invalid && validFrom.touched" class="alert alert-danger">
               Please select Valid From Date
@@ -94,7 +94,7 @@
             <label for="revision level">Revision Level</label>
           </div>
           <div class="col-md-6">
-            <input class="form-control" type="number" id="Revision Level" name="Revision Level"
+            <input class="form-control" type="number" id="Revision Level" name="Revision Level" minlength="1"
              placeholder="Enter Revision Level" required [(ngModel)]="createBillModel.revisionLevel" #revisionLevel="ngModel">
             <div *ngIf="revisionLevel.invalid && revisionLevel.touched" class="alert alert-danger">
               revisionLevel is required 
@@ -103,7 +103,7 @@
       </div>
     </div>
     <div class="form-group">
-      <button type="button" class="buttonDiv1 btn btn-lg btn-dark" [disabled]="!createBillForm.valid" routerLink="/fill_item_data">Set Item/Header Date</button>
+      <button type="button" class="buttonDiv1 btn btn-lg btn-dark" routerLink="/fill_item_data">Set Item/Header Date</button>
       <button type="button" class="btn btn-lg btn-dark" routerLink="/material">Cancel</button>
     </div>
     </div>
